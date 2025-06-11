@@ -57,4 +57,4 @@ contracts/out/
 # Environment
 contracts/.env
 
-. cursor/rules
+.cursor/rules
