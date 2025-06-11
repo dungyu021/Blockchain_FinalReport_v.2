@@ -48,3 +48,13 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw? 
+
+# Foundry build artifacts
+contracts/broadcast/
+contracts/cache/
+contracts/out/
+
+# Environment
+contracts/.env
+
+. cursor/rules
