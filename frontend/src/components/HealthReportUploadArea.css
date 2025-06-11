@@ -1,0 +1,190 @@
+/* 健康報告上傳區塊樣式 */
+.health-report-upload-area {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px 20px 20px;
+}
+
+.upload-container {
+  background: #FFb370;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.upload-title {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+/* 表單樣式 */
+.upload-form {
+  width: 100%;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  background: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  background: rgba(255, 255, 255, 0.7);
+  cursor: not-allowed;
+}
+
+
+
+/* CID 輸入容器 */
+.cid-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cid-input-container input {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.cid-input-container input.cid-used {
+  border: 2px solid #dc3545;
+  background-color: #fff5f5;
+}
+
+.cid-input-container input.cid-checking {
+  border: 2px solid #ffc107;
+  background-color: #fffbf0;
+}
+
+/* CID 狀態指示器 */
+.cid-status {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.cid-status .checking {
+  animation: spin 1s linear infinite;
+}
+
+.cid-status .used {
+  color: #dc3545;
+}
+
+.cid-status .available {
+  color: #28a745;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 按鈕容器 */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+/* 提交按鈕 */
+.submit-btn {
+  background: #f08651;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #e67a47;
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .health-report-upload-area {
+    padding: 20px 15px;
+  }
+
+  .upload-container {
+    padding: 30px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .upload-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-container {
+    padding: 25px 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+} 

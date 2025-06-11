@@ -1,0 +1,266 @@
+/* 通知覆蓋層 */
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.notification-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.notification-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 通知框主體 */
+.notification {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  min-width: 320px;
+  max-width: 500px;
+  margin: 0 20px;
+  border-left: 4px solid #ccc;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+/* 動畫效果 */
+.notification.slide-in {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.notification.slide-out {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* 通知內容 */
+.notification-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* 通知圖標 */
+.notification-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 通知訊息 */
+.notification-message {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333;
+  word-break: break-word;
+}
+
+/* 獎勵訊息特殊樣式 */
+.reward-message {
+  text-align: center;
+}
+
+.reward-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FF6B35;
+  margin-bottom: 8px;
+}
+
+.reward-amount {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.reward-amount strong {
+  color: #FF6B35;
+  font-weight: 700;
+}
+
+.reward-subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 關閉按鈕 */
+.notification-close-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.notification-close-btn:hover {
+  background: #f5f5f5;
+  color: #666;
+}
+
+/* 進度條（僅用於流程通知） */
+.notification-progress {
+  margin-top: 12px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 1.5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #FFb370, #e67a47);
+  border-radius: 1.5px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scaleX(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* 不同類型的通知樣式 */
+.notification.success {
+  border-left-color: #4CAF50;
+}
+
+.notification.success .notification-icon {
+  color: #4CAF50;
+}
+
+.notification.error {
+  border-left-color: #f44336;
+}
+
+.notification.error .notification-icon {
+  color: #f44336;
+}
+
+.notification.warning {
+  border-left-color: #ff9800;
+}
+
+.notification.warning .notification-icon {
+  color: #ff9800;
+}
+
+.notification.info {
+  border-left-color: #2196F3;
+}
+
+.notification.info .notification-icon {
+  color: #2196F3;
+}
+
+.notification.process {
+  border-left-color: #FFb370;
+}
+
+.notification.process .notification-icon {
+  color: #FFb370;
+  animation: rotate 2s linear infinite;
+}
+
+.notification.reward {
+  border-left-color: #FF6B35;
+  background: linear-gradient(135deg, #fff 0%, #fff8f0 100%);
+}
+
+.notification.reward .notification-icon {
+  color: #FF6B35;
+  font-size: 24px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .notification-overlay {
+    padding-top: 60px;
+  }
+  
+  .notification {
+    margin: 0 15px;
+    min-width: 280px;
+    padding: 16px;
+  }
+  
+  .notification-message {
+    font-size: 14px;
+  }
+  
+  .notification-icon {
+    font-size: 18px;
+  }
+  
+  .notification-close-btn {
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* 手機版獎勵訊息樣式 */
+  .reward-title {
+    font-size: 16px;
+  }
+  
+  .reward-amount {
+    font-size: 14px;
+  }
+  
+  .reward-subtitle {
+    font-size: 12px;
+  }
+} 

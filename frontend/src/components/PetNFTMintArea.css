@@ -1,0 +1,157 @@
+/* NFT鑄造區塊樣式 */
+.pet-nft-mint-area {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px 20px 20px;
+}
+
+.mint-container {
+  background: #FFb370;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mint-title {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+/* 表單樣式 */
+.mint-form {
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  background: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  background: rgba(255, 255, 255, 0.7);
+  cursor: not-allowed;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+
+
+/* 按鈕容器 */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+/* 鑄造按鈕 */
+.mint-btn {
+  background: #f08651;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.mint-btn:hover:not(:disabled) {
+  background: #e67a47;
+  transform: translateY(-1px);
+}
+
+.mint-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .pet-nft-mint-area {
+    padding: 20px 15px;
+  }
+
+  .mint-container {
+    padding: 30px 20px;
+  }
+
+  .mint-title {
+    font-size: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .mint-btn {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mint-container {
+    padding: 25px 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .mint-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+    min-width: 100px;
+  }
+
+  .button-container {
+    justify-content: center;
+  }
+} 
