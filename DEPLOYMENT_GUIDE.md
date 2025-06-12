@@ -161,9 +161,12 @@ npm install
 #### 4.1 配置 MetaMask 錢包
 1. 安裝 [MetaMask 瀏覽器擴展](https://metamask.io/)
 2. 創建錢包並備份助記詞
-3. 添加 Sepolia 測試網：
+3. 添加 Sepolia 測試網（推薦使用以下任一RPC端點）：
    - 網路名稱：`Sepolia Test Network`
-   - RPC URL：`https://ethereum-sepolia-rpc.publicnode.com`
+   - RPC URL（選擇其一）：
+     - `https://sepolia.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161` (推薦)
+     - `https://rpc.sepolia.org`
+     - `https://eth-sepolia.g.alchemy.com/v2/demo`
    - Chain ID：`11155111`
    - 貨幣符號：`ETH`
    - 區塊瀏覽器：`https://sepolia.etherscan.io/`
